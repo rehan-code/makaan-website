@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-bl from-[#00AF08]/10 to-transparent rounded-bl-full -z-10" />
       <div className="absolute bottom-0 left-0 w-1/4 h-2/3 bg-gradient-to-tr from-[#00AF08]/10 to-transparent rounded-tr-full -z-10" />
       
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-20">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <div className="relative">

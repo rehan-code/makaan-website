@@ -18,6 +18,7 @@ export default function Features() {
               title={feature.title}
               description={feature.description}
               icon={feature.icon}
+              delay={index * 200}
             />
           ))}
         </div>
