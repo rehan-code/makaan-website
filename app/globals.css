@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color: #00AF08;
+}
+
+body {
+  color: rgb(17, 24, 39);
+  background: white;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 100%;
+  }
+}
