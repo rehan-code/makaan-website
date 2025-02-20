@@ -27,7 +27,7 @@ export default function Hero() {
               <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#00AF08]/10 rounded-full -z-10 animate-pulse" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Join Our <span className="text-[#00AF08]">Exclusive</span> Muslim Business Community
+              Join Our <span className="text-[#00AF08]">Muslim</span> Business Community
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Be part of our invite-only platform connecting you with amazing Muslim-owned businesses in your area. Access is limited - join the waitlist today.
@@ -35,13 +35,13 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2 md:pl-12">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#00AF08]/10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Request Early Access</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Stay in the Loop</h2>
               <p className="text-gray-600 mb-6">
-                Join the waitlist for your chance to receive an exclusive access code.
+                Subscribe for the latest updates and exclusive offers.
               </p>
               <SubscribeForm onSubmit={handleSubscribe} />
               <p className="text-sm text-gray-500 mt-4 text-center">
-                Join {Math.floor(Math.random() * 500 + 1500)} others waiting for launch
+                Be the first to know when we launch
               </p>
             </div>
           </div>
