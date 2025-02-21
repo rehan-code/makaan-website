@@ -18,7 +18,7 @@ export const features: Feature[] = [
     ),
   },
   {
-    title: "Exclusive Community",
+    title: "Blessed Community",
     description: "Join our invite-only community. Members can invite others using exclusive access codes.",
     icon: (
       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,7 +27,7 @@ export const features: Feature[] = [
     ),
   },
   {
-    title: "Exclusive Offers",
+    title: "Special Offers",
     description: "Access special deals and discounts from participating businesses.",
     icon: (
       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
