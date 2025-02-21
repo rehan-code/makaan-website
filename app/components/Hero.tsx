@@ -2,9 +2,9 @@ import Image from 'next/image';
 import SubscribeForm from './SubscribeForm';
 
 export default function Hero() {
-  const handleSubscribe = (data: { email: string }) => {
-    // Handle newsletter signup
-    console.log('Email submitted:', data.email);
+  const handleSubscribe = (data: { businessName: string; email: string; phoneNumber: string }) => {
+    // Handle business signup
+    console.log('Business signup:', data);
   };
 
   return (
@@ -30,18 +30,18 @@ export default function Hero() {
               Join Our <span className="text-[#00AF08]">Muslim</span> Business Community
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Be part of our invite-only platform connecting you with amazing Muslim-owned businesses in your area. Access is limited - join the waitlist today.
+              We're building something special - a welcoming community that connects Muslim-owned businesses with customers who value authentic experiences. Let us know you're interested!
             </p>
           </div>
           <div className="md:w-1/2 md:pl-12">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#00AF08]/10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Stay in the Loop</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Show Your Interest</h2>
               <p className="text-gray-600 mb-6">
-                Subscribe for the latest updates and exclusive offers.
+                Drop your details below and be among the first to know when we're ready to welcome businesses to our platform!
               </p>
               <SubscribeForm onSubmit={handleSubscribe} />
               <p className="text-sm text-gray-500 mt-4 text-center">
-                Be the first to know when we launch
+                We'll keep you updated on our progress and launch plans
               </p>
             </div>
           </div>
