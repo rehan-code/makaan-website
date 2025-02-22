@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { supabase } from '@/utils/supabase';
 
 interface SubscribeFormProps {
-  onSubmit: (data: { businessName: string; email: string; phoneNumber: string }) => void;
+  onSubmit?: (data: { businessName: string; email: string; phoneNumber: string }) => void;
 }
 
 export default function SubscribeForm({ onSubmit }: SubscribeFormProps) {
@@ -10,10 +11,42 @@ export default function SubscribeForm({ onSubmit }: SubscribeFormProps) {
     email: '',
     phoneNumber: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const { error: supabaseError } = await supabase
+        .from('subscribers')
+        .insert([
+          {
+            business_name: formData.businessName,
+            email: formData.email,
+            phone_number: formData.phoneNumber,
+            created_at: new Date().toISOString(),
+          }
+        ]);
+
+      if (supabaseError) throw supabaseError;
+
+      // Clear form
+      setFormData({
+        businessName: '',
+        email: '',
+        phoneNumber: ''
+      });
+
+      // Call onSubmit prop if provided
+      if (onSubmit) onSubmit(formData);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,11 +92,15 @@ export default function SubscribeForm({ onSubmit }: SubscribeFormProps) {
           required
         />
       </div>
+      {error && (
+        <div className="text-red-500 text-sm">{error}</div>
+      )}
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-[#00AF08] to-[#00CF08] text-white px-8 py-4 rounded-xl hover:from-[#009507] hover:to-[#00BC08] transition-all shadow-lg shadow-[#00AF08]/20 hover:shadow-xl hover:shadow-[#00AF08]/30"
+        disabled={isSubmitting}
+        className={`w-full bg-gradient-to-r from-[#00AF08] to-[#00CF08] text-white px-8 py-4 rounded-xl hover:from-[#009507] hover:to-[#00BC08] transition-colors shadow-lg shadow-[#00AF08]/20 hover:shadow-xl hover:shadow-[#00AF08]/30 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
       >
-        Count Me In! 🎉
+        {isSubmitting ? 'Submitting...' : 'Count Me In! 🎉'}
       </button>
     </form>
   );
