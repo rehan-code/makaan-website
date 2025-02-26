@@ -30,18 +30,18 @@ export default function Hero() {
               Join Our <span className="text-[#00AF08]">Muslim</span> Business Community
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              We're building something special - a welcoming community that connects Muslim-owned businesses with customers who value authentic experiences. Let us know you're interested!
+              We&apos;re building something special - a welcoming community that connects Muslim-owned businesses with customers who value authentic experiences. Let us know you&apos;re interested!
             </p>
           </div>
           <div className="md:w-1/2 md:pl-12">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-[#00AF08]/10">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Show Your Interest</h2>
               <p className="text-gray-600 mb-6">
-                Drop your details below and be among the first to know when we're ready to welcome businesses to our platform!
+                Drop your details below and be among the first to know when we&apos;re ready to welcome businesses to our platform!
               </p>
               <SubscribeForm onSubmit={handleSubscribe} />
               <p className="text-sm text-gray-500 mt-4 text-center">
-                We'll keep you updated on our progress and launch plans
+                We&apos;ll keep you updated on our progress and launch plans
               </p>
             </div>
           </div>

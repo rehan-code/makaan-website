@@ -8,7 +8,7 @@ export default function Features() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6">Why Choose Makaan?</h2>
           <p className="text-gray-600">
-          Discover a platform built with the Muslim community in mind, connecting ethical businesses with conscious consumers to boost our ummah's economy.
+            Discover a platform built with the Muslim community in mind, connecting ethical businesses with conscious consumers to boost our ummah&apos;s economy
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-12">
